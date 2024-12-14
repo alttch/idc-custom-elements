@@ -51,6 +51,7 @@ export class IDCElementCollection {
       defaults: element.val_defaults,
       props: element.val_props,
       default_size: element.val_default_size,
+      default_zIndex: element.val_default_zindex,
       boxed: element.val_boxed,
       actions: element.val_actions,
       Viewer: element.val_Viewer
@@ -73,6 +74,7 @@ export class IDCElement {
   val_actions: boolean;
   val_Viewer: viewer;
   val_vendored: any;
+  val_default_zindex: number;
 
   constructor(class_name: string, viewer: viewer) {
     this.val_class_name = class_name;
@@ -86,9 +88,14 @@ export class IDCElement {
     this.val_actions = false;
     this.val_Viewer = viewer;
     this.val_vendored = null;
+    this.val_default_zindex = 10;
   }
   description(description: string) {
     this.val_description = description;
+    return this;
+  }
+  defaultZIndex(zindex: number) {
+    this.val_default_zindex = zindex;
     return this;
   }
   group(group: string) {
