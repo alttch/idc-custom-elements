@@ -136,3 +136,14 @@ export class IDCElement {
     return collection.export();
   }
 }
+
+export interface IDCValueColorMap {
+  value?: string;
+  color: string;
+}
+
+export interface IDCValueMap {
+  value?: string;
+  label: string;
+  color: string;
+}
